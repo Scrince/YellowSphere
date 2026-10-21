@@ -1,4 +1,4 @@
-﻿YellowSphere v1.6.1 - Release Notes
+YellowSphere v1.6.1 - Release Notes
 ==============================
 
 Release date: 2026-06-17
@@ -98,6 +98,6 @@ raw executable opens an "YellowSphere" window, the MSI ProductVersion is
 
 SHA-256:
 
-  6f3d89283b26207d5d8984380579d62799ac801852190c3065ee67bf21342f4a  releases/tauri/windows/yellowsphere.exe
+  9682c43f7ce3130b9766ceb240437897a1d8cf713083ac25f5945dbaa91f2146  releases/tauri/windows/yellowsphere.exe
   b07f3377fa4b86783b151609992d311daaaa486cf9dfe823490b554aaf8b675d  releases/tauri/windows/YellowSphere_1.6.1_x64-setup.exe
   3307862d58f364889abd233b905ceaaa06e4a01c683c216381e565d4dd08ab4e  releases/tauri/windows/YellowSphere_1.6.1_x64_en-US.msi

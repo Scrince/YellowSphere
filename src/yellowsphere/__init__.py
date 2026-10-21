@@ -1,4 +1,4 @@
-﻿"""YellowSphere Python package."""
+                                  
 
 from .core import APP_VERSION
 

@@ -1,4 +1,4 @@
-﻿"""Command-line interface for YellowSphere."""
+                                              
 
 from __future__ import annotations
 

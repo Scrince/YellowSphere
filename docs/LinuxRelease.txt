@@ -75,9 +75,9 @@ SHA-256 Verification
 
 The Linux artifact hashes are recorded in docs/SHA256SUMS:
 
-  baac9c3a8da73db7792c12382f135567ee50760b7f8b7649e21b8add18c2f81b  releases/tauri/linux/yellowsphere
-  92be81e6704138c0a6549e1277fab601973c29763f639d5676bd6d0d649bab82  releases/tauri/linux/YellowSphere_1.6.6_amd64.deb
-  162ec234d05376b7b43da72a79eecd34e2a6f594b6bd764a1aafb08494b20211  releases/tauri/linux/YellowSphere-1.6.6-1.x86_64.rpm
+  2db84072548cf8b5218e16d9e55752e5385b39596da70e67ec64162e53bf36a2  releases/tauri/linux/yellowsphere
+  daeed50705f33619456f5ffb59e313f906e827d7a87ecfb04b31b663a53c1bfc  releases/tauri/linux/YellowSphere_1.6.6_amd64.deb
+  42bc54cabb7742d7a1276df0e9902fddd668cd48bee2dcad1093abbdf9bac636  releases/tauri/linux/YellowSphere-1.6.6-1.x86_64.rpm
 
 Verify from the repository root with:
 

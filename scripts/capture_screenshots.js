@@ -47,7 +47,7 @@ function startServer() {
   return new Promise((resolve) => {
     server.listen(0, '127.0.0.1', () => {
       const address = server.address();
-      resolve({ server, url: `http://127.0.0.1:${address.port}/${APP_FILE}` });
+      resolve({ server, url: `http:
     });
   });
 }

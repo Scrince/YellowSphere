@@ -47,7 +47,7 @@ export const test = base.extend({
     await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
     const address = server.address();
     try {
-      await use(`http://127.0.0.1:${address.port}/${appFile}`);
+      await use(`http:
     } finally {
       const closed = new Promise((resolve, reject) => {
         server.close((error) => error ? reject(error) : resolve());

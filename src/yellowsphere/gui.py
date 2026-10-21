@@ -1,4 +1,4 @@
-﻿"""PySide6 desktop GUI that renders the canonical HTML application."""
+                                                                      
 
 from __future__ import annotations
 

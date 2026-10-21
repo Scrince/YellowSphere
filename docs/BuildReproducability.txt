@@ -1,4 +1,4 @@
-﻿YellowSphere - Build Reproducibility Specification
+YellowSphere - Build Reproducibility Specification
 ======================================================
 
 v1.6.6 Python release boundary (2026-06-26)
@@ -10,8 +10,8 @@ Windows workspace with AppleDouble sidecar files excluded before building.
 
 The measured Python release artifacts are:
 
-  bd8086ad38dc2939dbfc8238dcebcd35f10b38a9baee4df21373875ba2c702c7  releases/python/yellowsphere-1.6.6-py3-none-any.whl
-  a8f5e8854624cf18a4124e333fa309ae1d01fa7c6fe92459a4b62ced2fef26d1  releases/python/yellowsphere-1.6.6.tar.gz
+  503a7e6339e0d4d6ff2dcac5d6859c199c2e8cce338cb4c8d6d524b39c832c67  releases/python/yellowsphere-1.6.6-py3-none-any.whl
+  325948f3c10f66f8c2d8beeaa7ea88d8b2b520d6ec0c8a4171e4071a132b6107  releases/python/yellowsphere-1.6.6.tar.gz
 
 Their byte sizes are 345,509 (wheel) and 349,199 (source archive). The wheel
 metadata reports yellowsphere 1.6.6 with Python >=3.10 and includes the
@@ -51,7 +51,7 @@ linux/amd64 Docker builder on a macOS arm64 host. The builder used rustc
 
 The measured Linux release artifacts are:
 
-  9f847f0ee83bee76fc197fb28116dc48ebb6482eddb85d9a56ef621bf26616ea  releases/tauri/linux/yellowsphere
+  2db84072548cf8b5218e16d9e55752e5385b39596da70e67ec64162e53bf36a2  releases/tauri/linux/yellowsphere
   25feb4f563350259a9bd5d4149b74e7d241bea9096c2c7d980a3d6224b4267b7  releases/tauri/linux/YellowSphere_1.6.4_amd64.deb
   61ea1426bcf4b08c02db005a9c5f22a0a2555006d93bbe1754fe7a9358f9d9d5  releases/tauri/linux/YellowSphere-1.6.4-1.x86_64.rpm
 
@@ -133,13 +133,13 @@ v1.6.0 baseline:
 
 The v1.6.2 release hashes are:
 
-  61317f534d80d39504f296c48be3ed45b256dc05162ac851fb035d6dfb8aa0cf  releases/tauri/windows/yellowsphere.exe
+  9682c43f7ce3130b9766ceb240437897a1d8cf713083ac25f5945dbaa91f2146  releases/tauri/windows/yellowsphere.exe
   8f461fe50df109a74cfe7b24873f218394c95b7b6356cd494684876e180a58f6  releases/tauri/windows/YellowSphere_1.6.2_x64-setup.exe
   e11f404e2a1db85edcd42d534c6cd5c73cf286275e6b9e99d6d976752963a472  releases/tauri/windows/YellowSphere_1.6.2_x64_en-US.msi
   1c1f3c55911a3baaa3f84d1537f33c92703a88d5baea5009e12d5ce5402a975c  releases/tauri/macos/YellowSphere_1.6.2_x64.dmg
   eb996da31823d16d47472496d24f19a63709dd7c2166185c6fd28ed51b097718  releases/tauri/macos/YellowSphere_1.6.2_aarch64.dmg
   50a575cadd4a6fce213923041b6a5bb3124f77727f51e9bf78f04f3b401ae1af  releases/tauri/macos/YellowSphere_1.6.2_universal.dmg
-  5ecca80fbcae77fb209d3f14fdd193009920c1031990fdbcd74246bcebc0a352  releases/tauri/linux/yellowsphere
+  2db84072548cf8b5218e16d9e55752e5385b39596da70e67ec64162e53bf36a2  releases/tauri/linux/yellowsphere
   609d4b66b7b1ac1b11021390b330b2a207601dccd1de41dd8959e1568e45c01a  releases/tauri/linux/YellowSphere_1.6.2_amd64.deb
   a334d2aaac79ce8049e42061d0ba471f9c9466cac1fbeddba83d206c74a3e447  releases/tauri/linux/YellowSphere-1.6.2-1.x86_64.rpm
 
@@ -173,7 +173,7 @@ Canonical Hashes
 The v1.6.0 release hashes are:
 
   See docs/SHA256SUMS for the current archived LTS HTML hash.
-  a976e8903e13ab4b8d119178a7e66a41492e96d9c47df141afc081ee0601ae00  YellowSphere.py
+  6190989d383668fc0204128097cf9809a871de09a56e0f136e4605557c1a3dc1  YellowSphere.py
   0d1f05b6658e33417de4692b40aa7c5bb44a9f80a92b6ec7ec5010dfebe9d273  releases/tauri/linux/YellowSphere-1.6.0-1.x86_64.rpm
   992e2e436fff0af98f84598499f43c3b7fe194e7109de8e94747a72b3ac24a8d  releases/tauri/linux/YellowSphere_1.6.0_amd64.deb
   d0329d6f92a42b787b8528fe78aab23afbfcca7c95d94769b08c37dc5a22c24e  releases/tauri/macos/YellowSphere_1.6.0_aarch64.dmg

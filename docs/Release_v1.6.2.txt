@@ -1,4 +1,4 @@
-﻿YellowSphere v1.6.2 - Release Notes
+YellowSphere v1.6.2 - Release Notes
 ==============================
 
 Release date: 2026-06-17
@@ -136,13 +136,13 @@ set.
 SHA-256
 -------
 
-  61317f534d80d39504f296c48be3ed45b256dc05162ac851fb035d6dfb8aa0cf  releases/tauri/windows/yellowsphere.exe
+  9682c43f7ce3130b9766ceb240437897a1d8cf713083ac25f5945dbaa91f2146  releases/tauri/windows/yellowsphere.exe
   8f461fe50df109a74cfe7b24873f218394c95b7b6356cd494684876e180a58f6  releases/tauri/windows/YellowSphere_1.6.2_x64-setup.exe
   e11f404e2a1db85edcd42d534c6cd5c73cf286275e6b9e99d6d976752963a472  releases/tauri/windows/YellowSphere_1.6.2_x64_en-US.msi
   1c1f3c55911a3baaa3f84d1537f33c92703a88d5baea5009e12d5ce5402a975c  releases/tauri/macos/YellowSphere_1.6.2_x64.dmg
   eb996da31823d16d47472496d24f19a63709dd7c2166185c6fd28ed51b097718  releases/tauri/macos/YellowSphere_1.6.2_aarch64.dmg
   50a575cadd4a6fce213923041b6a5bb3124f77727f51e9bf78f04f3b401ae1af  releases/tauri/macos/YellowSphere_1.6.2_universal.dmg
-  5ecca80fbcae77fb209d3f14fdd193009920c1031990fdbcd74246bcebc0a352  releases/tauri/linux/yellowsphere
+  2db84072548cf8b5218e16d9e55752e5385b39596da70e67ec64162e53bf36a2  releases/tauri/linux/yellowsphere
   609d4b66b7b1ac1b11021390b330b2a207601dccd1de41dd8959e1568e45c01a  releases/tauri/linux/YellowSphere_1.6.2_amd64.deb
   a334d2aaac79ce8049e42061d0ba471f9c9466cac1fbeddba83d206c74a3e447  releases/tauri/linux/YellowSphere-1.6.2-1.x86_64.rpm
 

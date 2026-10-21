@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Core BIP39/BIP32 recovery and derivation engine for YellowSphere."""
+                      
+                                                                       
 
 import base64
 import csv
@@ -19,7 +19,7 @@ from urllib.parse import quote
 APP_VERSION = "1.6.6"
 
 
-# --- Embedded BIP39 English word list ---
+                                          
 BIP39_WORDS = [
     'abandon',
     'ability',
@@ -2073,7 +2073,7 @@ BIP39_WORDS = [
 BIP39_WORD_INDEX = {w: i for i, w in enumerate(BIP39_WORDS)}
 
 
-# secp256k1 domain params
+                         
 P = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F
 N = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 Gx = 55066263022277343669578718895168534326250603453777594175500187360389116729240
@@ -2116,10 +2116,10 @@ BCH_TESTNET = {
 }
 
 LTC_MAINNET = {
-    # SLIP-0132 versions for Litecoin where applicable.
+                                                       
     "p2pkh": {"xprv": 0x019D9CFE, "xpub": 0x019DA462},
     "p2wpkh-p2sh": {"xprv": 0x01B26792, "xpub": 0x01B26EF6},
-    # Keep native-segwit extended versions aligned with existing output format.
+                                                                               
     "p2wpkh": {"xprv": 0x04B2430C, "xpub": 0x04B24746},
     "p2tr": {"xprv": 0x019D9CFE, "xpub": 0x019DA462},
     "wif": 0xB0,
@@ -2140,10 +2140,10 @@ LTC_TESTNET = {
 }
 
 DOGE_MAINNET = {
-    # Dogecoin mainnet BIP32 version bytes (dgpv/dgub).
+                                                       
     "p2pkh": {"xprv": 0x02FAC398, "xpub": 0x02FACAFD},
-    # Dogecoin does not have widely adopted SLIP-0132 y/z versions.
-    # Reuse Dogecoin BIP32 versions so extended keys remain consistent.
+                                                                   
+                                                                       
     "p2wpkh-p2sh": {"xprv": 0x02FAC398, "xpub": 0x02FACAFD},
     "p2wpkh": {"xprv": 0x02FAC398, "xpub": 0x02FACAFD},
     "p2tr": None,
@@ -2279,7 +2279,7 @@ def sha256(b: bytes) -> bytes:
 
 
 def keccak256(data: bytes) -> bytes:
-    # Ethereum uses Keccak-256, not the finalized NIST SHA3-256 variant.
+                                                                        
     mask = (1 << 64) - 1
     rate = 136
     rot = [
@@ -2967,11 +2967,12 @@ def b64decode_required(value: object, field_name: str, expected_len: int | None 
 
 
 def arc_v2_stream_crypt(data: bytes, key: bytes, nonce: bytes) -> bytes:
-    """Encrypt/decrypt with an HMAC-SHA512 counter stream.
-
-    Python stdlib has no AES-GCM or block cipher. This keeps the implementation
-    dependency-free while pairing the stream with a separate HMAC-SHA512 tag.
-    """
+    pass
+\
+\
+\
+\
+       
     out = bytearray()
     counter = 0
     while len(out) < len(data):
@@ -3024,7 +3025,7 @@ def normalize_decrypted_mnemonic(payload: Dict) -> str:
 
 
 def encrypt_v2(mnemonic: str, password: str) -> Dict:
-    """Create a modern `.arc` bundle using PBKDF2-SHA512 and HMAC-SHA512 AE."""
+                                                                               
     words = normalize_mnemonic_words(mnemonic)
     if len(words) not in (12, 24):
         raise ValueError("Only 12-word and 24-word mnemonics can be encrypted.")
@@ -3967,9 +3968,9 @@ def save_derived_pdf(data: Dict, path: str, root_fingerprint: str = "") -> None:
     _write_simple_pdf(path, streams, page_w, page_h)
 
 
-# ---------------------------------------------------------------------------
-# Pure-Python QR Code Generator (stdlib only) - ported from HTML QRGen
-# ---------------------------------------------------------------------------
+                                                                             
+                                                                      
+                                                                             
 import re as _re
 import zlib as _zlib
 import struct as _struct
@@ -4041,7 +4042,7 @@ def _qr_make_matrix(ver):
     def finder(r,c):
         rect(r,c,7,7,1); rect(r+1,c+1,5,5,0); rect(r+2,c+2,3,3,1)
     finder(0,0); finder(0,size-7); finder(size-7,0)
-    # separators
+                
     for i in range(8):
         for pos in [(7,i),(i,7),(7,size-8+i),(size-8+i,7),(7,i),(size-8+i,size-8)]:
             if 0<=pos[0]<size and 0<=pos[1]<size: m[pos[0]][pos[1]]=0
@@ -4049,11 +4050,11 @@ def _qr_make_matrix(ver):
         m[7][size-8+i]=0; m[size-8+i][7]=0
         m[size-8][i]=0; m[i][size-8]=0
         m[7][size-1-i]=0 if i<8 else m[7][size-1-i]
-    # timing
+            
     for i in range(8,size-8):
         m[6][i] = 1 if i%2==0 else 0
         m[i][6] = 1 if i%2==0 else 0
-    # alignment
+               
     aligns = _QR_ALIGN[ver]
     for ar in aligns:
         for ac in aligns:
@@ -4061,16 +4062,16 @@ def _qr_make_matrix(ver):
                 pass
             else:
                 rect(ar-2,ac-2,5,5,1); rect(ar-1,ac-1,3,3,0); m[ar][ac]=1
-    # dark module
+                 
     m[size-8][8] = 1
-    # format placeholder (0 = not reserved structurally but will be written)
+                                                                            
     fmt_positions = (
         [(8,i) for i in range(9) if i!=6] + [(7,8),(5,8),(4,8),(3,8),(2,8),(1,8),(0,8)] +
         [(i,size-1-j) for j,i in enumerate(range(8))] + [(size-7+j,8) for j in range(7)]
     )
     for (r,c) in fmt_positions:
         if 0<=r<size and 0<=c<size: m[r][c]=0
-    # mark data cells as False (bool)
+                                     
     for r in range(size):
         for c in range(size):
             if m[r][c] == 0:
@@ -4136,7 +4137,7 @@ def _qr_penalty(m):
     size = len(m)
     score = 0
     def v(r,c): return 1 if bool(m[r][c]) else 0
-    # Rule 1: runs of 5+
+                        
     for r in range(size):
         run=1
         for c in range(1,size):
@@ -4153,12 +4154,12 @@ def _qr_penalty(m):
                 if run>=5: score+=run-2
                 run=1
         if run>=5: score+=run-2
-    # Rule 2: 2x2 blocks
+                        
     for r in range(size-1):
         for c in range(size-1):
             a=v(r,c); b=v(r,c+1); d=v(r+1,c); e=v(r+1,c+1)
             if a==b==d==e: score+=3
-    # Rule 3: patterns
+                      
     pat1=[1,0,1,1,1,0,1,0,0,0,0]; pat2=[0,0,0,0,1,0,1,1,1,0,1]
     for r in range(size):
         for c in range(size-10):
@@ -4168,24 +4169,24 @@ def _qr_penalty(m):
         for r in range(size-10):
             col=[v(r+k,c) for k in range(11)]
             if col==pat1 or col==pat2: score+=40
-    # Rule 4: dark proportion
+                             
     total=size*size; dark=sum(v(r,c) for r in range(size) for c in range(size))
     pct=100*dark//total; score+=10*min(abs(pct-50)//5, abs((pct+1)-50)//5)
     return score
 
 def _qr_build_codewords(bits, total_data, ec_per_block, num_blocks):
-    # pad bits to full codewords
+                                
     while len(bits) < total_data*8:
         bits += [1,1,1,0,1,1,0,0] if (len(bits)//8)%2==0 else [0,0,0,1,0,0,0,1]
         if len(bits) >= total_data*8: break
     data_bytes = [int(''.join(map(str,bits[i*8:(i+1)*8])),2) for i in range(total_data)]
-    # split into blocks
+                       
     block_sizes = [total_data//num_blocks + (1 if i < total_data%num_blocks else 0) for i in range(num_blocks)]
     blocks=[]; ec_blocks=[]
     idx=0
     for bs in block_sizes:
         blk=data_bytes[idx:idx+bs]; blocks.append(blk); ec_blocks.append(_rs_encode(blk,ec_per_block)); idx+=bs
-    # interleave
+                
     result=[]
     max_len=max(len(b) for b in blocks)
     for i in range(max_len):
@@ -4197,7 +4198,7 @@ def _qr_build_codewords(bits, total_data, ec_per_block, num_blocks):
 
 def qr_generate(text: str) -> list:
     data = text.encode('iso-8859-1') if all(ord(c)<256 for c in text) else text.encode('utf-8')
-    mode = 0b0100  # byte mode
+    mode = 0b0100             
     for ver in range(1,11):
         for ecc_idx, ec_level in enumerate(['M','Q']):
             cap = _QR_CAP[ver][ecc_idx]
@@ -4208,7 +4209,7 @@ def qr_generate(text: str) -> list:
     else:
         ver=10; ecc_idx=0; ec_level='M'; cap=_QR_CAP[10][0]
     n=len(data); bits=[0]*4; bits[0]=(mode>>3)&1; bits[1]=(mode>>2)&1; bits[2]=(mode>>1)&1; bits[3]=mode&1
-    # 8-bit length
+                  
     for i in range(7,-1,-1): bits.append((n>>i)&1)
     for byte in data:
         for i in range(7,-1,-1): bits.append((byte>>i)&1)
