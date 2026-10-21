@@ -9,7 +9,7 @@ validate_artifacts=0
 skip_rust_tests=0
 require_notarization=0
 
-while (($#)); do
+while (($
   case "$1" in
     --build-installers) build_installers=1 ;;
     --validate-artifacts) validate_artifacts=1 ;;
@@ -129,7 +129,7 @@ if ((validate_artifacts)); then
     validate_dmg "$relative"
     verify_manifest_hash "$relative"
   done
-  # hdiutil may create AppleDouble sidecars when the repository is on exFAT.
+  
   find releases/tauri/macos -name '._*' -type f -delete
   if find releases/tauri/macos -name '._*' -type f | grep -q .; then
     echo "AppleDouble files found in macOS release outputs." >&2

@@ -12,7 +12,7 @@ inside_docker=0
 require_rpm_signature=0
 
 original_args=("$@")
-while (($#)); do
+while (($
   case "$1" in
     --build-packages) build_packages=1 ;;
     --validate-artifacts) validate_artifacts=1 ;;

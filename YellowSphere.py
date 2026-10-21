@@ -1,9 +1,9 @@
-﻿#!/usr/bin/env python3
-"""Compatibility launcher for YellowSphere.
-
-Run without arguments or with ``--gui`` to open the PySide6 desktop app.
-Pass ``--mnemonic`` and related flags to use the CLI derivation mode.
-"""
+                      
+\
+\
+\
+\
+   
 
 from __future__ import annotations
 
