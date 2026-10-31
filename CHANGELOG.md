@@ -12,6 +12,13 @@ format.
 
 ## [Unreleased]
 
+## [1.6.7-rc.2] - 2026-10-31
+
+- Normalized the PowerShell preparation script's replacement snippets and made
+  the Python preparation script strip the source HTML BOM so both generate
+  byte-identical Tauri frontend assets.
+- Fixed the Windows Tauri candidate build failure found in rc.1.
+
 ## [1.6.7-rc.1] - 2026-10-31
 
 - Repaired the Playwright fixture server URL and the Linux/macOS release harness argument loops (issue #49).

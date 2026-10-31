@@ -62,7 +62,7 @@ def main() -> None:
         shutil.rmtree(DIST, ignore_errors=True)
     DIST.mkdir(parents=True, exist_ok=True)
 
-    html = (ROOT / "YellowSphere.html").read_text(encoding="utf-8")
+    html = (ROOT / "YellowSphere.html").read_text(encoding="utf-8-sig")
     html = html.replace("src/yellowsphere/assets/favicon.png", "favicon.png")
     html = html.replace("src/yellowsphere/assets/settings-icon.png", "settings-icon.png")
     if EXPORT_FALLBACK_OLD not in html:

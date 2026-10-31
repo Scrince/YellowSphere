@@ -50,6 +50,8 @@ $new = @'
           }
         }
 '@
+$old = $old.Replace("`r`n", "`n")
+$new = $new.Replace("`r`n", "`n")
 if (-not $html.Contains($old)) {
   throw "Could not apply Tauri export fallback patch to generated index.html"
 }

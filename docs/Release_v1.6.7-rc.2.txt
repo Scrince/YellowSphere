@@ -1,0 +1,48 @@
+YellowSphere v1.6.7-rc.2 - Release Candidate Notes
+=================================================
+
+Candidate date: 2026-10-31
+Candidate tag: v1.6.7-rc.2
+Application/package version: 1.6.7
+
+This is a prerelease candidate for validation. It is not a production release.
+The v1.6.6 release remains the latest published stable release until the
+platform artifacts, hashes, and detached signatures for v1.6.7 are complete.
+
+Changes
+-------
+
+- Repaired the truncated Playwright fixture URL and Linux/macOS release
+  harness argument loops (issue #49).
+- Updated application and package version metadata to 1.6.7, including the
+  standalone and packaged HTML CSP hashes.
+- Fixed Windows asset preparation, which failed in rc.1 because the PowerShell
+  replacement template and source HTML used different line endings.
+- Updated Python asset preparation to strip a source UTF-8 BOM. Both Tauri
+  preparation scripts now produce byte-identical generated HTML.
+
+Validation
+----------
+
+- Python test suite: 14 tests passed.
+- Playwright fixture JavaScript syntax: passed with Node.js --check.
+- Linux and macOS release harness shell syntax: passed with Bash -n.
+- Windows Tauri release preflight: passed with Rust tests skipped.
+- Windows and Python Tauri preparation scripts: generated identical HTML.
+- Python 3.14 source archive and universal wheel: built successfully. The
+  build emitted setuptools' existing license-table deprecation notice.
+- Rust tests/build: not completed on the Windows host because the Visual C++
+  linker (link.exe) is unavailable.
+- Full Playwright browser suite: not run because npm dependencies and a local
+  Playwright browser installation are unavailable in this worktree.
+- In hosted CI, rc.1 passed Ubuntu and macOS builds. Its Windows job failed in
+  asset preparation; rc.2 includes the fix and requires a fresh Windows run.
+
+Release completion requirements
+-------------------------------
+
+Do not promote this candidate until all three platform builds and validation
+jobs pass; each published artifact has a matching SHA-256 entry; the manifest
+and release files have detached signatures from the published release key;
+and all signatures verify against the pinned fingerprint documented in
+Release_v1.6.6.txt.
