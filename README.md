@@ -1,6 +1,6 @@
 ﻿# YellowSphere
 
-YellowSphere v1.6.6 is an offline seed recovery, deterministic key derivation, and encrypted seed-backup tool. The canonical standalone application is [`YellowSphere.html`](YellowSphere.html). It validates or generates BIP39 mnemonics, derives wallet addresses and private keys, imports or exports `.arc` seed backups, exports derived material, and generates address QR codes without contacting a server.
+YellowSphere v1.6.7 is an offline seed recovery, deterministic key derivation, and encrypted seed-backup tool. The canonical standalone application is [`YellowSphere.html`](YellowSphere.html). It validates or generates BIP39 mnemonics, derives wallet addresses and private keys, imports or exports `.arc` seed backups, exports derived material, and generates address QR codes without contacting a server.
 
 Use this tool only on a trusted offline machine. It handles seed phrases, BIP39 passphrases, private keys, extended private keys, WIF keys, Stellar secret seeds, Cardano private keys, and plaintext export files.
 

@@ -1,0 +1,42 @@
+YellowSphere v1.6.7-rc.1 - Release Candidate Notes
+=================================================
+
+Candidate date: 2026-10-31
+Candidate tag: v1.6.7-rc.1
+Application/package version: 1.6.7
+
+This is a prerelease candidate for validation. It is not a production release.
+The v1.6.6 release remains the latest published stable release until the
+platform artifacts, hashes, and detached signatures for v1.6.7 are complete.
+
+Changes
+-------
+
+- Repaired the truncated Playwright fixture URL and the Linux/macOS release
+  harness argument loops (issue #49).
+- Updated active application and package version metadata to 1.6.7.
+- Updated both standalone and packaged HTML CSP hashes for the version change.
+
+Validation
+----------
+
+- Python test suite: 14 tests passed.
+- Playwright fixture JavaScript syntax: passed with Node.js --check.
+- Linux and macOS release harness shell syntax: passed with Bash -n.
+- Windows Tauri release preflight: passed with Rust tests skipped.
+- Python source archive and universal wheel: built successfully with Python
+  3.14. The build emitted setuptools' existing license-table deprecation notice.
+- Rust tests/build: not completed on the Windows host because the Visual C++
+  linker (link.exe) is unavailable.
+- Full Playwright browser suite: not run because npm dependencies and a local
+  Playwright browser installation are unavailable in this worktree.
+- macOS and Linux native builds: require their documented platform runners.
+
+Release completion requirements
+-------------------------------
+
+Do not promote this candidate until CI builds and validates Windows, macOS,
+and Linux artifacts; every published artifact has a matching SHA-256 entry;
+the checksum manifest and release files have detached signatures from the
+published release key; and all signatures verify against the pinned public-key
+fingerprint documented in Release_v1.6.6.txt.

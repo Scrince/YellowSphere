@@ -1,7 +1,7 @@
 ﻿# Changelog - YellowSphere
 
 All notable user-facing and compatibility-relevant changes are documented here.
-The v1.6.6 source of truth is `YellowSphere.html` plus the byte-level
+The v1.6.7 source of truth is `YellowSphere.html` plus the byte-level
 references in `docs/`. The previous v1.6.4 standalone build is archived under
 `lts/`.
 
@@ -11,6 +11,12 @@ releases. Older entries below preserve that history while normalizing the
 format.
 
 ## [Unreleased]
+
+## [1.6.7-rc.1] - 2026-10-31
+
+- Repaired the Playwright fixture server URL and the Linux/macOS release harness argument loops (issue #49).
+- Prepared the offline browser, Python, and Tauri source set as version 1.6.7-rc.1.
+
 
 ## [1.6.6] - 2026-06-26
 

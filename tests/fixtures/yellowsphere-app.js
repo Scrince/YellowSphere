@@ -47,7 +47,7 @@ export const test = base.extend({
     await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
     const address = server.address();
     try {
-      await use(`http:
+      await use(`http://${address.address}:${address.port}/`);
     } finally {
       const closed = new Promise((resolve, reject) => {
         server.close((error) => error ? reject(error) : resolve());
@@ -66,7 +66,7 @@ export const test = base.extend({
     page.on('pageerror', (error) => browserErrors.push(error.message));
 
     await page.goto(appUrl);
-    await expect(page).toHaveTitle('YellowSphere v1.6.6');
+    await expect(page).toHaveTitle('YellowSphere v1.6.7');
     await expect(page.locator('#status')).toHaveText('Ready');
     await use(page);
     expect(browserErrors, 'The application emitted browser errors').toEqual([]);

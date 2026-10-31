@@ -9,7 +9,7 @@ validate_artifacts=0
 skip_rust_tests=0
 require_notarization=0
 
-while (($
+while (($# > 0)); do
   case "$1" in
     --build-installers) build_installers=1 ;;
     --validate-artifacts) validate_artifacts=1 ;;
