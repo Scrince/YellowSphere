@@ -1,0 +1,89 @@
+YellowSphere/                         # Production application source and shipped runtime files
+|   YellowSphere.html                 # Canonical standalone offline browser application
+|   YellowSphere.py                   # Python launcher for the GUI and CLI
+|   README.md                          # Product overview, supported surfaces, and operator setup
+|   LICENSE.md                         # Project and third-party licensing information
+|   MIGRATION.md                       # User-facing upgrade and backup migration guidance
+|   SECURITY.md                        # Vulnerability reporting guidance
+|   THREAT_MODEL.md                    # Security boundary and operating assumptions
+|   CHANGELOG.md                       # Published application change history
+|   pyproject.toml                     # Python package metadata and installed command definition
+|   requirements.txt                   # Python GUI runtime dependencies
+|   package.json                       # Tauri application metadata and production packaging commands
+|
++---docs                              # User, operator, and production format documentation
+|   |   UserGuide.txt                  # Operating instructions
+|   |   Recovery.txt                   # Recovery workflow and limitations
+|   |   OpSec.txt                      # Offline operating guidance
+|   |   Passphrase.txt                 # BIP39 passphrase behavior
+|   |   Derivation.txt                 # Derivation and address behavior
+|   |   Encryption.txt                 # ARC and keyfile encryption behavior
+|   |   FileFormat.txt                 # Import/export formats
+|   |   QR.txt                         # QR payload and rendering behavior
+|   |   ThirdPartyNotices.txt          # Runtime dependency notices
+|   |   YellowSphere_Manual.pdf        # Operator manual
+|   \---screenshots                    # Product interface examples
+|
++---lts                               # Previously published standalone application versions
+|       YellowSphere_v1.5.0_LTS.html
+|       YellowSphere_v1.6.0_LTS.html
+|       YellowSphere_v1.6.2_LTS.html
+|       YellowSphere_v1.6.4_LTS.html
+|
++---releases                          # Shipped platform-specific application packages
+|   +---python                         # Python wheel and source distribution
+|   \---tauri                          # Windows, macOS, and Linux desktop packages
+|
++---src
+|   \---yellowsphere                   # Python application implementation
+|       |   cli.py                      # Python CLI
+|       |   core.py                     # Python derivation and export implementation
+|       |   gui.py                      # PySide6 desktop GUI wrapper
+|       |   __main__.py
+|       |   __init__.py
+|       \---assets                     # Packaged offline GUI runtime assets
+|               YellowSphere.html      # Browser UI embedded in the Python GUI
+|               jspdf.umd.min.js       # Vendored local PDF runtime
+|               favicon.png
+|               settings-icon.png
+|
++---src-tauri                          # Rust/Tauri desktop application source and runtime configuration
+|   |   Cargo.toml
+|   |   tauri.conf.json
+|   |   tauri.linux.conf.json
+|   |   linux-desktop.template
+|   |   build.rs
+|   +---capabilities
+|   +---icons
+|   +---permissions
+|   \---src
+|           lib.rs
+|           main.rs
+|
++---tauri-dist                         # Prepared local frontend files consumed by the Tauri application
+|       index.html
+|       favicon.png
+|       settings-icon.png
+|
+\---vendor
+    \---jspdf                          # Vendored offline PDF runtime for the standalone browser app
+            jspdf.umd.min.js
+
+Production notes:
+
+  The canonical standalone browser application is YellowSphere.html. It runs
+  directly as a local file and does not require a build step or network access.
+  The Python GUI packages its own HTML and runtime assets under
+  src/yellowsphere/assets/. Tauri uses the prepared frontend in tauri-dist/;
+  its preparation scripts are development/build tooling and are intentionally
+  outside this production tree.
+
+  The repository also ships Python and Tauri packages under releases/ and
+  retains earlier standalone browser builds under lts/. Package versions and
+  platform contents can vary by release; consult README.md and the relevant
+  user documentation for current support details.
+
+  This map omits development and build environment files such as tests,
+  workflows, build scripts, dependency lockfiles, generated schemas, caches,
+  temporary files, and intermediate outputs. It also omits credentials,
+  private keys, signing material, and secret-bearing files or values.
